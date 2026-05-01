@@ -1,0 +1,12 @@
+{% extends 'biblioteca/base.html' %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <h2>Bienvenido, {{ user.username }}.</h2>
+        <p>Has iniciado sesión correctamente con el usuario <strong>Jesus Fuentes</strong>.</p>
+    {% else %}
+        <h2>Bienvenido a la biblioteca</h2>
+        <p>Inicia sesión con el usuario <strong>Jesus Fuentes</strong> y la contraseña <strong>mondongo123</strong>.</p>
+        <a href="{% url 'login' %}">Iniciar sesión</a>
+    {% endif %}
+{% endblock %}
